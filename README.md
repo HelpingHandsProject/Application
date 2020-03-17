@@ -7,7 +7,7 @@ Check the [LICENSE](LICENSE) file for further information
 
 - The app is soly aimed towards helping people
 - Because of the current corona crisis we strive to develop the app as quickly as possible!
-
+- Even tough we want to develop the app quickly, safe authentication & server communication as well as the privacy of users are very important for us.
 
 ### Features of the app:
 
@@ -16,7 +16,6 @@ Check the [LICENSE](LICENSE) file for further information
 - A screen where users can post new requests
 - A messenger where users can chat with other users
 - A profile page where people can edit their data
-- Safe authentication & server communication
 
 ![Early Design](app_design_v0.1.jpg)
 
@@ -39,7 +38,10 @@ Some use cases people could need help with:
 - [Flutter SDK](https://flutter.dev/) (cross-platform app development)
 - [Dart](https://dart.dev/) (programming language)
 - [Firebase](https://firebase.google.com/) (server backend)
-- [Material Design](https://material.io/design/) (design pattern)
+
+### Design of the app:
+
+- We will base everything on [Material Design](https://material.io/design/) (design pattern)
 
 ## We would love you to contribute to the app
 
