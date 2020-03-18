@@ -23,6 +23,7 @@ dependencies:
   cloud_firestore: ^0.12.9+4
   provider: ^3.1.0
   flutter_map: ^0.8.2
+  google_sign_in: ^4.1.4
   flutter_spinkit: "^4.0.0"
 
   # The following adds the Cupertino Icons font to your application.

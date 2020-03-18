@@ -27,6 +27,7 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
       backgroundColor: Colors.brown[100],
+      //ParametrizedAppBar(performAction: widget.toggleView(), displayText: 'Sign up for Helping Hands', displayIcon: Icons.person, buttonLabel: 'Sign In', appBar: AppBar()),
       appBar: AppBar(
         backgroundColor: Colors.green[600],
         elevation: 0.0,

@@ -1,5 +1,7 @@
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:helping_hands/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
 
@@ -7,26 +9,14 @@ class AuthService {
 
   // create user obj based on firebase user
   User _userFromFirebaseUser(FirebaseUser user) {
+    //print(user);
     return user != null ? User(uid: user.uid) : null;
   }
 
   // auth change user stream
   Stream<User> get user {
     return _auth.onAuthStateChanged
-      //.map((FirebaseUser user) => _userFromFirebaseUser(user));
       .map(_userFromFirebaseUser);
-  }
-
-  // sign in anon
-  Future signInAnon() async {
-    try {
-      AuthResult result = await _auth.signInAnonymously();
-      FirebaseUser user = result.user;
-      return _userFromFirebaseUser(user);
-    } catch (e) {
-      print(e.toString());
-      return null;
-    }
   }
 
   // sign in with email and password
@@ -40,6 +30,24 @@ class AuthService {
       return null;
     } 
   }
+/*
+  // sign in with google sign in
+  Future signInWithGoogle() async {
+    try {
+      final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication googleAuth =
+      await googleUser.authentication;
+      final AuthCredential credential = GoogleAuthProvider.getCredential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      final FirebaseUser user = await _auth.signInWithCredential(credential);
+      return _userFromFirebaseUser(user);
+    } catch (error) {
+      print(error.toString());
+      return null;
+    }
+  }*/
 
   // register with email and password
   Future registerWithEmailAndPassword(String email, String password) async {
