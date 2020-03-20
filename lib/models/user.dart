@@ -1,7 +1,9 @@
 class User {
 
   final String uid;
+  final bool isEmailVerified;
+  final String email;
   
-  User({ this.uid });
+  User({ this.uid, this.isEmailVerified, this.email });
 
 }

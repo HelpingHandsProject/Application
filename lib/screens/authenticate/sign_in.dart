@@ -2,6 +2,7 @@ import 'package:helping_hands/services/auth.dart';
 import 'package:helping_hands/shared/constants.dart';
 import 'package:helping_hands/shared/loading.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
 class SignIn extends StatefulWidget {
 
@@ -62,7 +63,8 @@ class _SignInState extends State<SignIn> {
                   setState(() => password = val);
                 },
               ),
-              SizedBox(height: 20.0),
+              ForgotPW(email: email, auth: _auth,),
+              //SizedBox(height: 20.0),
               RaisedButton(
                 color: Colors.green[600],
                 child: Text(
@@ -82,6 +84,16 @@ class _SignInState extends State<SignIn> {
                   }
                 }
               ),
+              //SizedBox(height: 6.0),
+              GoogleSignInButton(onPressed: () async {
+                dynamic result = await _auth.googleSignIn();
+                if(result == null) {
+                  setState(() {
+                    loading = false;
+                    error = 'Could not sign in with google';
+                  });
+                }
+              }),
               SizedBox(height: 12.0),
               Text(
                 error,
@@ -91,6 +103,42 @@ class _SignInState extends State<SignIn> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class ForgotPW extends StatelessWidget {
+
+  final AuthService auth;
+  final String email;
+  const ForgotPW({
+    Key key, this.email, this.auth,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      child: Text("Forgot Password?"),
+      textColor: Colors.black54,
+      onPressed: () async {
+        String msg = '!';
+        if(email.contains('@') && email.contains('.')){
+          dynamic result = await auth.sendPasswordResetEmail(email);
+          if(result != null)
+            msg = 'df!';
+          else
+            msg = 'If you are registered, we sent you a password-reset E-Mail!';
+        }
+        else {
+          msg = 'Enter a valid E-Mail!';
+        }
+        final snackBar = SnackBar(
+          content: Text(msg),
+        );
+        // Find the Scaffold in the widget tree and use
+        // it to show a SnackBar.
+        Scaffold.of(context).showSnackBar(snackBar);
+        },
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:helping_hands/services/auth.dart';
 import 'package:helping_hands/shared/constants.dart';
 import 'package:helping_hands/shared/loading.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
 class Register extends StatefulWidget {
 
@@ -83,6 +84,35 @@ class _RegisterState extends State<Register> {
                   }
                 }
               ),
+              SizedBox(height: 6.0),
+              /*GoogleSignInButton(onPressed: () async {
+                setState(() => loading = true);
+                dynamic result = await _auth.googleSignIn();
+                if(result == null) {
+                  setState(() {
+                    loading = false;
+                    error = 'Could not sign in with google';
+                  });
+                }
+              }),
+              RaisedButton(
+                  color: Colors.white,
+                  child: Text(
+                    'Register with Google',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  onPressed: () async {
+                    setState(() => loading = true);
+                    dynamic result = await _auth.googleSignIn();
+                    if(result == null) {
+                      setState(() {
+                        loading = false;
+                        error = 'Could not register you with google';
+                      });
+                    }
+
+                  }
+              ),*/
               SizedBox(height: 12.0),
               Text(
                 error,
