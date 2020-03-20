@@ -1,4 +1,4 @@
-import 'package:helping_hands/models/user.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:helping_hands/screens/authenticate/authenticate.dart';
 import 'package:helping_hands/screens/authenticate/verify_email.dart';
 import 'package:helping_hands/screens/home/home.dart';
@@ -9,7 +9,7 @@ class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final user = Provider.of<User>(context);
+    final user = Provider.of<FirebaseUser>(context);
     // return either the Home or Authenticate widget
     if (user == null){
       return Authenticate();
@@ -17,7 +17,7 @@ class Wrapper extends StatelessWidget {
       if(user.isEmailVerified)
       return Home();
       else
-        return VerifyEmail();
+        return VerifyEmail(user: user,);
     }
     
   }

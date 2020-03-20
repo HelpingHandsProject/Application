@@ -1,11 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:helping_hands/models/user.dart';
 import 'package:helping_hands/services/auth.dart';
 
 class VerifyEmail extends StatefulWidget{
 
-  User user;
+  FirebaseUser user;
 
   VerifyEmail({this.user});
 
@@ -51,7 +51,8 @@ class _VerifyEmailState extends State<VerifyEmail> {
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () async {
-              _auth.verifyUserEmail(widget.user.email);
+              _auth.verifyUserEmail(widget.user);
+              await _auth.signOut();
             }
         ),]
       ),

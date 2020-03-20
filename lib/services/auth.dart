@@ -1,22 +1,13 @@
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:helping_hands/models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // create user obj based on firebase user
-  User _userFromFirebaseUser(FirebaseUser user) {
-    print(user);
-    return user != null ? User(isEmailVerified: user.isEmailVerified ,uid: user.uid, email: user.email) : null;
-  }
-
   // auth change user stream
-  Stream<User> get user {
-    return _auth.onAuthStateChanged
-      .map(_userFromFirebaseUser);
+  Stream<FirebaseUser> get user {
+    return _auth.onAuthStateChanged;
   }
 
   // sign in with email and password
@@ -51,7 +42,7 @@ class AuthService {
       final FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
       print("signed in " + user.displayName);
 
-      return _userFromFirebaseUser(user);
+      return user;
     }catch (e) {
       print(e.message);
     }
@@ -61,13 +52,8 @@ class AuthService {
     return await _auth.sendPasswordResetEmail(email: email).catchError((e){return null;});
   }
 
-  Future<void> verifyUserEmail(String email) async {
-    return await _auth.sendSignInWithEmailLink(email: email,
-        url: "https://helpinghands-75c29.firebaseapp.com/",
-        handleCodeInApp: true, iOSBundleID: null,
-        androidPackageName: "com.helpinghandsproject.application",
-        androidInstallIfNotAvailable: null,
-        androidMinimumVersion: null);
+  Future<void> verifyUserEmail(FirebaseUser user) async {
+    user.sendEmailVerification();
   }
 
 
@@ -76,7 +62,8 @@ class AuthService {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = result.user;
-      return _userFromFirebaseUser(user);
+      user.sendEmailVerification();
+      return user;
     } catch (error) {
       print(error.toString());
       return null;
