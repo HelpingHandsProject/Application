@@ -28,7 +28,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
-      backgroundColor: BackgroundColor,
+      backgroundColor: backgroundColor,
       appBar: BaseAppBar(titleText: 'Sign in', icon: Icons.person,
         buttonText: "Register", onPressedFunction: widget.toggleView),
       body: Container(
@@ -49,10 +49,10 @@ class _SignInState extends State<SignIn> {
               ),
               ForgotPW(email: email, auth: _auth,),
               RaisedButton(
-                color: PrimaryColor,
+                color: primaryColor,
                 child: Text(
                   'Sign In',
-                  style: TextStyle(color: LightTextColor),
+                  style: TextStyle(color: lightTextColor),
                 ),
                 onPressed: signInWithEmailAndPasswordButton
               ),
@@ -68,7 +68,7 @@ class _SignInState extends State<SignIn> {
               SizedBox(height: 12.0),
               Text(
                 error,
-                style: TextStyle(color: ErrorColor, fontSize: 14.0),
+                style: TextStyle(color: errorColor, fontSize: 14.0),
               ),
             ],
           ),
@@ -107,7 +107,7 @@ class ForgotPW extends StatelessWidget {
 
     return FlatButton(
       child: Text("Forgot Password?"),
-      textColor: DarkTextColor,
+      textColor: darkTextColor,
       onPressed: forgotPasswordWrapper,
     );
   }

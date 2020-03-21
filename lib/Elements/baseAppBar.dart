@@ -17,7 +17,7 @@ class BaseAppBar extends StatelessWidget with PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: PrimaryColor,
+      backgroundColor: primaryColor,
       elevation: 0.0,
       title: Text(titleText),
       centerTitle: true,
@@ -25,7 +25,7 @@ class BaseAppBar extends StatelessWidget with PreferredSizeWidget{
         FlatButton.icon(
           icon: Icon(icon),
           label: Text(buttonText),
-          textColor: LightTextColor,
+          textColor: lightTextColor,
           onPressed: onPressedFunction,
         ),
       ],

@@ -28,7 +28,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
-      backgroundColor: BackgroundColor,
+      backgroundColor: backgroundColor,
       appBar: BaseAppBar(titleText: 'Sign up', icon: Icons.person,
           buttonText: "Sign In", onPressedFunction: widget.toggleView),
       body: Container(
@@ -43,10 +43,10 @@ class _RegisterState extends State<Register> {
               PasswordTextField((val) {setState(() => password = val);}),
               SizedBox(height: 20.0),
               RaisedButton(
-                color: PrimaryColor,
+                color: primaryColor,
                 child: Text(
                   'Register',
-                  style: TextStyle(color: LightTextColor),
+                  style: TextStyle(color: lightTextColor),
                 ),
                 onPressed: registerWithEmailAndPasswordButton
               ),
@@ -54,7 +54,7 @@ class _RegisterState extends State<Register> {
               SizedBox(height: 12.0),
               Text(
                 error,
-                style: TextStyle(color: ErrorColor, fontSize: 14.0),
+                style: TextStyle(color: errorColor, fontSize: 14.0),
               )
             ],
           ),

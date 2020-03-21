@@ -2,17 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Basic Colors
-final Color PrimaryColor = Colors.green[600];
-final Color BackgroundColor = Colors.brown[50];
-final Color ErrorColor = Colors.red;
+final Color primaryColor = Colors.green[600];
+final Color backgroundColor = Colors.brown[50];
+final Color errorColor = Colors.red;
 
 // Text colors
-final Color DarkTextColor = Colors.black54;
-final Color LightTextColor = Colors.white;
+final Color darkTextColor = Colors.black54;
+final Color lightTextColor = Colors.white;
 
 // Symbol Colors
-final Color UnselectedItemColor = Colors.grey[600];
-final Color LoadingSymbolColor = Colors.brown;
+final Color unselectedItemColor = Colors.grey[600];
+final Color loadingSymbolColor = Colors.brown;
 
 const textInputDecoration = InputDecoration(
   fillColor: Colors.white,
