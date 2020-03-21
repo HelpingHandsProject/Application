@@ -22,7 +22,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: BackgroundColor,
+      backgroundColor: backgroundColor,
       appBar: LogoutAppBar(titleText: 'Helping Hands'),
       body: Column(
         children: <Widget>[
@@ -30,10 +30,10 @@ class _VerifyEmailState extends State<VerifyEmail> {
           Center(child: Text("Please Confim your E-Mail by clicking the Link we sent you")),
           SizedBox(height: 20.0),
           RaisedButton(
-            color: PrimaryColor,
+            color: primaryColor,
             child: Text(
               'Send E-Mail verification code again',
-              style: TextStyle(color: LightTextColor),
+              style: TextStyle(color: lightTextColor),
             ),
             onPressed: verifyUserEmailButton
         ),]

@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        backgroundColor: BackgroundColor,
+        backgroundColor: backgroundColor,
         appBar: LogoutAppBar(titleText: 'Helping Hands'),
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),
@@ -60,8 +60,8 @@ class _HomeState extends State<Home> {
             ),
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: PrimaryColor,
-          unselectedItemColor: UnselectedItemColor,
+          selectedItemColor: primaryColor,
+          unselectedItemColor: unselectedItemColor,
           onTap: _onItemTapped,
         ),
       ),
