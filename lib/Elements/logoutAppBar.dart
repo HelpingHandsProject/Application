@@ -13,7 +13,7 @@ class LogoutAppBar extends BaseAppBar{
     onPressedFunction: signOutWrapper,
   );
 
-  static Function signOutWrapper(){
+  static void signOutWrapper(){
     final AuthService _auth = AuthService();
     _auth.signOut();
   }
