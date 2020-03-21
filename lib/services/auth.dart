@@ -1,21 +1,22 @@
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class AuthService {
 
+class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // auth change user stream
+  // Stream listens for changes to the authentification status
   Stream<FirebaseUser> get user {
     return _auth.onAuthStateChanged;
   }
 
-  // sign in with email and password
+  // Sign in with email and password
   Future signInWithEmailAndPassword(String email, String password) async {
     try {
       AuthResult result = await _auth.signInWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = result.user;
       return user;
+
     } catch (error) {
       print(error.toString());
       return null;
@@ -30,7 +31,6 @@ class AuthService {
         ],
       );
       final FirebaseAuth _auth = FirebaseAuth.instance;
-
       final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
       final GoogleSignInAuthentication googleAuth = await googleUser.authentication;
 
@@ -43,7 +43,8 @@ class AuthService {
       print("signed in " + user.displayName);
 
       return user;
-    }catch (e) {
+
+    } catch (e) {
       print(e.message);
     }
   }
@@ -57,13 +58,14 @@ class AuthService {
   }
 
 
-  // register with email and password
+  // Register with email and password
   Future registerWithEmailAndPassword(String email, String password) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       FirebaseUser user = result.user;
       user.sendEmailVerification();
       return user;
+
     } catch (error) {
       print(error.toString());
       return null;
@@ -71,10 +73,11 @@ class AuthService {
   }
 
 
-  // sign out
+  // Sign out
   Future signOut() async {
     try {
       return await _auth.signOut();
+
     } catch (error) {
       print(error.toString());
       return null;

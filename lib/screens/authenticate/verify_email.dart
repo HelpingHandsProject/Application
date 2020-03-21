@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:helping_hands/Constants/colors.dart';
+import 'package:helping_hands/Elements/logoutAppBar.dart';
 import 'package:helping_hands/services/auth.dart';
 
 class VerifyEmail extends StatefulWidget{
@@ -19,43 +21,28 @@ class _VerifyEmailState extends State<VerifyEmail> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
-      backgroundColor: Colors.brown[50],
-      appBar: AppBar(
-        title: Text('Helping Hands'),
-        centerTitle: true,
-        backgroundColor: Colors.green[600],
-        elevation: 0.0,
-        actions: <Widget>[
-          FlatButton.icon(
-            icon: Icon(Icons.person),
-            label: Text('logout'),
-            onPressed: () async {
-              await _auth.signOut();
-            },
-            textColor: Colors.white,
-
-          ),
-        ],
-      ),
+      backgroundColor: BackgroundColor,
+      appBar: LogoutAppBar(titleText: 'Helping Hands'),
       body: Column(
         children: <Widget>[
           SizedBox(height: 150.0),
           Center(child: Text("Please Confim your E-Mail by clicking the Link we sent you")),
           SizedBox(height: 20.0),
           RaisedButton(
-            color: Colors.green[600],
+            color: PrimaryColor,
             child: Text(
               'Send E-Mail verification code again',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: LightTextColor),
             ),
-            onPressed: () async {
-              _auth.verifyUserEmail(widget.user);
-              await _auth.signOut();
-            }
+            onPressed: verifyUserEmailButton
         ),]
       ),
     );
+  }
+
+  Future verifyUserEmailButton() async {
+    _auth.verifyUserEmail(widget.user);
+    await _auth.signOut();
   }
 }
