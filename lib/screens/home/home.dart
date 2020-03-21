@@ -1,8 +1,6 @@
 import 'package:helping_hands/Constants/colors.dart';
 import 'package:helping_hands/Elements/logoutAppBar.dart';
-import 'package:helping_hands/services/auth.dart';
 import 'package:flutter/material.dart';
-
 
 class Home extends StatefulWidget {
   @override
@@ -12,7 +10,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Home - Feed',
