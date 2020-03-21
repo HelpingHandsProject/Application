@@ -7,7 +7,7 @@ import 'package:helping_hands/services/auth.dart';
 
 class VerifyEmail extends StatefulWidget{
 
-  FirebaseUser user;
+  final FirebaseUser user;
 
   VerifyEmail({this.user});
 
