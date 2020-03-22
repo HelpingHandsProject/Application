@@ -28,6 +28,7 @@ class Request {
         titleStr: title,
         descriptionStr: description,
         addressStr: address,
+        locationStr: location,
         requestStatusStr: requestStatus,
         weekDaysRepeatingStr: weekDaysRepeating,
         dueDateStr: dueDate
@@ -42,6 +43,7 @@ class Request {
         assert(map[titleStr] != null),
         assert(map[descriptionStr] != null),
         assert(map[addressStr] != null),
+        assert(map[locationStr] != null),
         assert(map[requestStatusStr] != null),
         assert(map[weekDaysRepeatingStr] != null),
         assert(map[dueDateStr] != null),
@@ -53,6 +55,7 @@ class Request {
         title = map[titleStr],
         description = map[descriptionStr],
         address = map[addressStr],
+        location = map[locationStr],
         requestStatus = map[requestStatusStr],
         weekDaysRepeating = map[weekDaysRepeatingStr],
         dueDate = map[dueDateStr];

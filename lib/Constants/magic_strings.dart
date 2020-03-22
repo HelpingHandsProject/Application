@@ -14,6 +14,7 @@ const lastEditedStr = "lastEdited";
 const firstNameStr = "firstName";
 const lastNameStr = "lastName";
 const addressStr = "address";
+const locationStr = "location";
 const profilePictureLinkStr = "profilePictureLink";
 const ratingsReceivedStr = "ratingsReceived";
 const ratingsGivenStr = "ratingsGiven";
