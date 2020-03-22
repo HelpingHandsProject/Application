@@ -22,6 +22,10 @@ class User implements BaseModel {
       this.ratingsGiven, this.thumbsUpGiven, this.thumbsDownGiven,
       [this.address, this.profilePictureLink]);
 
+  String getId() {
+    return uid;
+  }
+
   Map<String, dynamic> toMap() => {
         uidStr: uid,
         requestIdsStr: requestIds,

@@ -13,6 +13,10 @@ class ChatMessage implements BaseModel {
 
   ChatMessage(this.message, [this.requestId]);
 
+  String getId() {
+    return messageId;
+  }
+
   Map<String, dynamic> toMap() => {
         messageIdStr: messageId,
         uidStr: uid,

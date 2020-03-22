@@ -20,6 +20,10 @@ class Request implements BaseModel {
   Request(this.helpersNeeded, this.title, this.description, this.address,
       this.requestStatus, this.weekDaysRepeating, this.dueDate);
 
+  String getId() {
+    return requestId;
+  }
+
   Map<String, dynamic> toMap() => {
         requestIdStr: requestId,
         ownerIdStr: ownerId,

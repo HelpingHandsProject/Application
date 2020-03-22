@@ -10,6 +10,10 @@ class Chat implements BaseModel {
 
   Chat(this.participantIds);
 
+  String getId() {
+    return chatId;
+  }
+
   Map<String, dynamic> toMap() => {
         chatIdStr: chatId,
         participantIdsStr: participantIds,
