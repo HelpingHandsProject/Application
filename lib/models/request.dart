@@ -10,6 +10,7 @@ class Request {
   String title;
   String description;
   String address;
+  GeoPoint location;
   RequestStatus requestStatus;
   List<Days> weekDaysRepeating; // 0 = Monday, 6 = Sunday
   DateTime dueDate;
