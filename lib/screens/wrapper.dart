@@ -5,20 +5,26 @@ import 'package:helping_hands/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'authenticate/createProfile.dart';
+
 class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final user = Provider.of<FirebaseUser>(context);
+    final firebaseUser = Provider.of<FirebaseUser>(context);
+
     // Return either the Home or Authenticate widget
-    if (user == null){
+    if (firebaseUser == null){
       return Authenticate();
     } else {
-      if(user.isEmailVerified){
-        return Home();
-      }
-      else
-        return VerifyEmail(user: user,);
+      if(firebaseUser.isEmailVerified){
+        if(false) {
+          return Home();
+        } else{
+          return CreateProfile();
+        }
+      } else
+        return VerifyEmail(user: firebaseUser,);
     }
   }
 }

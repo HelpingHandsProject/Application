@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamProvider<FirebaseUser>.value(
-      value: AuthService().user,
+      value: AuthService().firebaseUser,
       child: MaterialApp(
         home: Wrapper(),
       ),

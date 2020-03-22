@@ -1,6 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:helping_hands/Constants/colors.dart';
 
+class NameTextField extends TextFormField{
+  static RegExp notJustWhitespaces = new RegExp('\\s+');
+
+  NameTextField(String hintText, Function(String) onChanged) : super(
+        decoration: textInputDecoration.copyWith(hintText: hintText),
+        validator: nameValidator,
+        onChanged: onChanged);
+
+  static String nameValidator(String pass){
+
+    if(pass.length == 0){
+      return 'Enter a name';
+    }
+    if(pass.split(notJustWhitespaces).length == 0){
+      return 'Enter a valid name';
+    }
+    return null;
+  }
+}
+
+
 class PasswordTextField extends TextFormField{
 
   static RegExp letter = new RegExp(r".*[a-zA-Z].*",);
