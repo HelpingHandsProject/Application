@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:helping_hands/constants/magic_strings.dart';
+import 'package:helping_hands/models/baseModel.dart';
 
-class Request {
+class Request implements BaseModel {
   String requestId;
   String ownerId;
   String chatId;
