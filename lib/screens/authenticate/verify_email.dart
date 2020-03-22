@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:helping_hands/Constants/colors.dart';
+import 'package:helping_hands/Constants/icons.dart';
 import 'package:helping_hands/Elements/logoutAppBar.dart';
 import 'package:helping_hands/services/auth.dart';
 
@@ -27,7 +28,18 @@ class _VerifyEmailState extends State<VerifyEmail> {
       body: Column(
         children: <Widget>[
           SizedBox(height: 150.0),
-          Center(child: Text("Please Confim your E-Mail by clicking the Link we sent you")),
+          Center(
+            child: Column(
+              children: <Widget>[
+                Text("Please confim your E-Mail"),
+                Text("Just click the Link we sent you "),
+                SizedBox(height: 10.0),
+                Icon(emailSentIcon),
+                SizedBox(height: 10.0),
+                Text("Once you confirmed your mail sign in again")
+              ],
+            ),
+          ),
           SizedBox(height: 20.0),
           RaisedButton(
             color: primaryColor,

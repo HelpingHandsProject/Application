@@ -32,6 +32,7 @@ class PasswordTextField extends TextFormField{
       decoration: textInputDecoration.copyWith(hintText: 'password'),
       obscureText: true,
       validator: passwordValidator,
+      keyboardType: TextInputType.multiline,
       onChanged: onChanged);
 
   static String passwordValidator(String pass){
@@ -58,9 +59,10 @@ class PasswordTextField extends TextFormField{
         r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_{|}~]+@[a-zA-Z0-9]+.[a-zA-Z]+");
 
     EmailTextField(Function(String) onChanged) : super(
-    decoration: textInputDecoration.copyWith(hintText: 'email'),
-    validator: emailValidator,
-    onChanged: onChanged);
+        decoration: textInputDecoration.copyWith(hintText: 'email'),
+        keyboardType: TextInputType.emailAddress,
+        validator: emailValidator,
+        onChanged: onChanged);
 
   static String emailValidator(String pass){
 
