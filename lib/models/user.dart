@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:helping_hands/constants/magic_strings.dart';
 import 'rating.dart';
 
 class User {
@@ -20,29 +21,44 @@ class User {
       this.ratingsGiven, this.thumbsUpGiven, this.thumbsDownGiven,
       [this.address, this.profilePictureLink]);
 
+  Map<String, dynamic> toMap() => {
+        uidStr: uid,
+        requestIdsStr: requestIds,
+        chatIdsStr: chatIds,
+        deviceIdsStr: deviceIds,
+        firstNameStr: firstName,
+        lastNameStr: lastName,
+        addressStr: address,
+        profilePictureLinkStr: profilePictureLink,
+        ratingsReceivedStr: ratingsReceived,
+        ratingsGivenStr: ratingsGiven,
+        thumbsUpGivenStr: thumbsUpGiven,
+        thumbsDownGivenStr: thumbsDownGiven
+      };
+
   User.fromMap(Map<String, dynamic> map, {this.reference})
-      : assert(map["uid"] != null),
-        assert(map["requestIds"] != null),
-        assert(map["chatIds"] != null),
-        assert(map["deviceIds"] != null),
-        assert(map["firstName"] != null),
-        assert(map["lastName"] != null),
-        assert(map["ratingsReceived"] != null),
-        assert(map["ratingsGiven"] != null),
-        assert(map["thumbsUpGiven"] != null),
-        assert(map["thumbsDownGiven"] != null),
-        uid = map["uid"],
-        requestIds = map["requestIds"],
-        chatIds = map["chatIds"],
-        deviceIds = map["deviceIds"],
-        firstName = map["firstName"],
-        lastName = map["lastName"],
-        address = map["address"],
-        profilePictureLink = map["profilePictureLink"],
-        ratingsReceived = map["ratingsReceived"],
-        ratingsGiven = map["ratingsGiven"],
-        thumbsUpGiven = map["thumbsUpGiven"],
-        thumbsDownGiven = map["thumbsDownGiven"];
+      : assert(map[uidStr] != null),
+        assert(map[requestIdsStr] != null),
+        assert(map[chatIdsStr] != null),
+        assert(map[deviceIdsStr] != null),
+        assert(map[firstNameStr] != null),
+        assert(map[lastNameStr] != null),
+        assert(map[ratingsReceivedStr] != null),
+        assert(map[ratingsGivenStr] != null),
+        assert(map[thumbsUpGivenStr] != null),
+        assert(map[thumbsDownGivenStr] != null),
+        uid = map[uidStr],
+        requestIds = map[requestIdsStr],
+        chatIds = map[chatIdsStr],
+        deviceIds = map[deviceIdsStr],
+        firstName = map[firstNameStr],
+        lastName = map[lastNameStr],
+        address = map[profilePictureLinkStr],
+        profilePictureLink = map[profilePictureLinkStr],
+        ratingsReceived = map[ratingsReceivedStr],
+        ratingsGiven = map[ratingsGivenStr],
+        thumbsUpGiven = map[thumbsUpGivenStr],
+        thumbsDownGiven = map[thumbsDownGivenStr];
 
   User.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);

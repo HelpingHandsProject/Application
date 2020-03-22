@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:helping_hands/constants/magic_strings.dart';
 
 class Request {
   String requestId;
@@ -17,29 +18,43 @@ class Request {
   Request(this.helpersNeeded, this.title, this.description, this.address,
       this.requestStatus, this.weekDaysRepeating, this.dueDate);
 
+  Map<String, dynamic> toMap() => {
+        requestIdStr: requestId,
+        ownerIdStr: ownerId,
+        chatIdStr: chatId,
+        helperIdsStr: helperIds,
+        helpersNeededStr: helpersNeeded,
+        titleStr: title,
+        descriptionStr: description,
+        addressStr: address,
+        requestStatusStr: requestStatus,
+        weekDaysRepeatingStr: weekDaysRepeating,
+        dueDateStr: dueDate
+      };
+
   Request.fromMap(Map<String, dynamic> map, {this.reference})
-      : assert(map["requestId"] != null),
-        assert(map["ownerId"] != null),
-        assert(map["chatId"] != null),
-        assert(map["helperIds"] != null),
-        assert(map["helpersNeeded"] != null),
-        assert(map["title"] != null),
-        assert(map["description"] != null),
-        assert(map["address"] != null),
-        assert(map["requestStatus"] != null),
-        assert(map["weekDaysRepeating"] != null),
-        assert(map["dueDate"] != null),
-        requestId = map["requestId"],
-        chatId = map["chatId"],
-        ownerId = map["ownerId"],
-        helperIds = map["helperIds"],
-        helpersNeeded = map["helpersNeeded"],
-        title = map["title"],
-        description = map["description"],
-        address = map["address"],
-        requestStatus = map["requestStatus"],
-        weekDaysRepeating = map["weekDaysRepeating"],
-        dueDate = map["dueDate"];
+      : assert(map[requestIdStr] != null),
+        assert(map[ownerIdStr] != null),
+        assert(map[chatIdStr] != null),
+        assert(map[helperIdsStr] != null),
+        assert(map[helpersNeededStr] != null),
+        assert(map[titleStr] != null),
+        assert(map[descriptionStr] != null),
+        assert(map[addressStr] != null),
+        assert(map[requestStatusStr] != null),
+        assert(map[weekDaysRepeatingStr] != null),
+        assert(map[dueDateStr] != null),
+        requestId = map[requestIdStr],
+        ownerId = map[ownerIdStr],
+        chatId = map[chatIdStr],
+        helperIds = map[helperIdsStr],
+        helpersNeeded = map[helpersNeededStr],
+        title = map[titleStr],
+        description = map[descriptionStr],
+        address = map[addressStr],
+        requestStatus = map[requestStatusStr],
+        weekDaysRepeating = map[weekDaysRepeatingStr],
+        dueDate = map[dueDateStr];
 
   Request.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);
