@@ -10,7 +10,7 @@ Future<void> main() async {
   final FirebaseApp app = await FirebaseApp.configure(
       name: "HelpingHands", options: const FirebaseOptions(googleAppID: ""));
 
-  final Firestore firestore = Firestore(app: app);
+  Firestore(app: app);
 
   runApp(MyApp());
 }

@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:helping_hands/screens/authenticate/authenticate.dart';
 import 'package:helping_hands/screens/authenticate/verify_email.dart';
