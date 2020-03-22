@@ -25,6 +25,7 @@ class CRUD {
       print("CRUD/create: User is not logged in!");
       return null;
     }
+
     await object.reference.updateData(object.toMap());
   }
 
@@ -34,6 +35,15 @@ class CRUD {
       return null;
     }
     await object.reference.delete();
+  }
+
+  void subscribeToDocumentChange<T extends BaseModel>(
+      T document, void Function(T updatedDocument) onChange) {
+    document.reference.snapshots().listen((snapshot) {
+      document.toMap();
+      T updatedDocument = document.fromSnapshot(snapshot);
+      onChange(updatedDocument);
+    });
   }
 
   static String getCollectionName<T>() {

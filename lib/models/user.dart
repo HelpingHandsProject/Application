@@ -22,10 +22,12 @@ class User implements BaseModel {
       this.ratingsGiven, this.thumbsUpGiven, this.thumbsDownGiven,
       [this.address, this.profilePictureLink]);
 
+  @override
   String getId() {
     return uid;
   }
 
+  @override
   Map<String, dynamic> toMap() => {
         uidStr: uid,
         requestIdsStr: requestIds,
@@ -41,7 +43,8 @@ class User implements BaseModel {
         thumbsDownGivenStr: thumbsDownGiven
       };
 
-  User.fromMap(Map<String, dynamic> map, {this.reference})
+  @override
+  User.fromMap(Map<String, dynamic> map, this.reference)
       : assert(map[uidStr] != null),
         assert(map[requestIdsStr] != null),
         assert(map[chatIdsStr] != null),
@@ -65,8 +68,10 @@ class User implements BaseModel {
         thumbsUpGiven = map[thumbsUpGivenStr],
         thumbsDownGiven = map[thumbsDownGivenStr];
 
-  User.fromSnapshot(DocumentSnapshot snapshot)
-      : this.fromMap(snapshot.data, reference: snapshot.reference);
+  @override
+  BaseModel fromSnapshot(DocumentSnapshot snapshot) {
+    return User.fromMap(snapshot.data, snapshot.reference);
+  }
 
   @override
   String toString() => "User<$uid>";

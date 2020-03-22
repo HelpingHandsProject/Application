@@ -10,17 +10,20 @@ class Chat implements BaseModel {
 
   Chat(this.participantIds);
 
+  @override
   String getId() {
     return chatId;
   }
 
+  @override
   Map<String, dynamic> toMap() => {
         chatIdStr: chatId,
         participantIdsStr: participantIds,
         openRequestIdsStr: openRequestIds
       };
 
-  Chat.fromMap(Map<String, dynamic> map, {this.reference})
+  @override
+  Chat.fromMap(Map<String, dynamic> map, this.reference)
       : assert(map[chatIdStr] != null),
         assert(map[participantIdsStr] != null),
         assert(map[openRequestIdsStr] != null),
@@ -28,6 +31,8 @@ class Chat implements BaseModel {
         participantIds = map[participantIdsStr],
         openRequestIds = map[openRequestIdsStr];
 
-  Chat.fromSnapshot(DocumentSnapshot snapshot)
-      : this.fromMap(snapshot.data, reference: snapshot.reference);
+  @override
+  BaseModel fromSnapshot(DocumentSnapshot snapshot) {
+    return Chat.fromMap(snapshot.data, snapshot.reference);
+  }
 }

@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:device_info/device_info.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -86,5 +89,17 @@ class AuthService {
       return true;
     else
       return false;
+  }
+
+  static Future<String> getDeviceId() async {
+    final DeviceInfoPlugin deviceInfoPlugin = new DeviceInfoPlugin();
+    if (Platform.isAndroid) {
+      var build = await deviceInfoPlugin.androidInfo;
+      return build.androidId; //UUID for Android
+    } else if (Platform.isIOS) {
+      var data = await deviceInfoPlugin.iosInfo;
+      return data.identifierForVendor; //UUID for iOS
+    }
+    return null;
   }
 }

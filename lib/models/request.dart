@@ -20,10 +20,12 @@ class Request implements BaseModel {
   Request(this.helpersNeeded, this.title, this.description, this.address,
       this.requestStatus, this.weekDaysRepeating, this.dueDate);
 
+  @override
   String getId() {
     return requestId;
   }
 
+  @override
   Map<String, dynamic> toMap() => {
         requestIdStr: requestId,
         ownerIdStr: ownerId,
@@ -39,7 +41,7 @@ class Request implements BaseModel {
         dueDateStr: dueDate
       };
 
-  Request.fromMap(Map<String, dynamic> map, {this.reference})
+  Request.fromMap(Map<String, dynamic> map, this.reference)
       : assert(map[requestIdStr] != null),
         assert(map[ownerIdStr] != null),
         assert(map[chatIdStr] != null),
@@ -65,8 +67,10 @@ class Request implements BaseModel {
         weekDaysRepeating = map[weekDaysRepeatingStr],
         dueDate = map[dueDateStr];
 
-  Request.fromSnapshot(DocumentSnapshot snapshot)
-      : this.fromMap(snapshot.data, reference: snapshot.reference);
+  @override
+  BaseModel fromSnapshot(DocumentSnapshot snapshot) {
+    return Request.fromMap(snapshot.data, snapshot.reference);
+  }
 }
 
 enum RequestStatus { open, active, closed }
