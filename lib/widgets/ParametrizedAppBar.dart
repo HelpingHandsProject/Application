@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:helping_hands/Constants/colors.dart';
 
 class ParametrizedAppBar extends StatelessWidget implements PreferredSizeWidget{
 
@@ -16,7 +17,7 @@ class ParametrizedAppBar extends StatelessWidget implements PreferredSizeWidget{
 
   Widget build(BuildContext context){
     return AppBar(
-      backgroundColor: Colors.green[600],
+      backgroundColor: primaryColor,
       elevation: 0.0,
       title: Text(displayText),
       actions: <Widget>[

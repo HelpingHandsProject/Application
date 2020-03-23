@@ -1,4 +1,5 @@
 import 'package:helping_hands/Constants/colors.dart';
+import 'package:helping_hands/Constants/icons.dart';
 import 'package:helping_hands/Elements/logoutAppBar.dart';
 import 'package:flutter/material.dart';
 
@@ -45,15 +46,15 @@ class _HomeState extends State<Home> {
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: Icon(homeIcon),
               title: Text('Home'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.add),
+              icon: Icon(addRequestIcon),
               title: Text('My Requests'),
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
+              icon: Icon(settingsIcon),
               title: Text('Settings'),
             ),
           ],

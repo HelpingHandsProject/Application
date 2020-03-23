@@ -1,4 +1,5 @@
 import 'package:helping_hands/Constants/colors.dart';
+import 'package:helping_hands/Constants/icons.dart';
 import 'package:helping_hands/Elements/baseAppBar.dart';
 import 'package:helping_hands/Elements/formFields.dart';
 import 'package:helping_hands/services/auth.dart';
@@ -29,48 +30,50 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
       backgroundColor: backgroundColor,
-      appBar: BaseAppBar(titleText: 'Sign in', icon: Icons.person,
+      appBar: BaseAppBar(titleText: 'Sign in', icon: personIcon,
         buttonText: "Register", onPressedFunction: widget.toggleView),
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: <Widget>[
-              SizedBox(height: 20.0),
-              EmailTextField((val) {setState(() => email = val);}),
-              SizedBox(height: 20.0),
-              TextFormField(
-                obscureText: true,
-                decoration: textInputDecoration.copyWith(hintText: 'password'),
-                onChanged: (val) {
-                  setState(() => password = val);
-                },
-              ),
-              ForgotPW(email: email, auth: _auth,),
-              RaisedButton(
-                color: primaryColor,
-                child: Text(
-                  'Sign In',
-                  style: TextStyle(color: lightTextColor),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: 20.0),
+                EmailTextField((val) {setState(() => email = val);}),
+                SizedBox(height: 20.0),
+                TextFormField(
+                  obscureText: true,
+                  decoration: textInputDecoration.copyWith(hintText: 'password'),
+                  onChanged: (val) {
+                    setState(() => password = val);
+                  },
                 ),
-                onPressed: signInWithEmailAndPasswordButton
-              ),
-              GoogleSignInButton(onPressed: () async {
-                dynamic result = await _auth.googleSignIn();
-                if(result == null) {
-                  setState(() {
-                    loading = false;
-                    error = 'Could not sign in with google';
-                  });
-                }
-              }),
-              SizedBox(height: 12.0),
-              Text(
-                error,
-                style: TextStyle(color: errorColor, fontSize: 14.0),
-              ),
-            ],
+                ForgotPW(email: email, auth: _auth,),
+                RaisedButton(
+                  color: primaryColor,
+                  child: Text(
+                    'Sign In',
+                    style: TextStyle(color: lightTextColor),
+                  ),
+                  onPressed: signInWithEmailAndPasswordButton
+                ),
+                GoogleSignInButton(onPressed: () async {
+                  dynamic result = await _auth.googleSignIn();
+                  if(result == null) {
+                    setState(() {
+                      loading = false;
+                      error = 'Could not sign in with google';
+                    });
+                  }
+                }),
+                SizedBox(height: 12.0),
+                Text(
+                  error,
+                  style: TextStyle(color: errorColor, fontSize: 14.0),
+                ),
+              ],
+            ),
           ),
         ),
       ),
