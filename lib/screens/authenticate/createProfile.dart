@@ -38,7 +38,7 @@ class _CreateProfileState extends State<CreateProfile> {
               }),
               SizedBox(height: 20.0),
               NameTextField("Lastname", (val) {
-                setState(() => firstName = val);
+                setState(() => lastName = val);
               }),
               SizedBox(height: 20.0),
               RaisedButton(
@@ -65,10 +65,12 @@ class _CreateProfileState extends State<CreateProfile> {
   Future completingProfileInformation() async {
     if (_formKey.currentState.validate()) {
       setState(() => loading = true);
+      String uid = await AuthService.getUserId();
       String deviceId = await AuthService.getDeviceId();
-      List deviceIds = deviceId != null ? [deviceId] : [];
-      DocumentReference result = await CRUD
-          .add<User>(User(deviceIds, firstName, lastName, [], [], 0, 0));
+      List<String> deviceIds =
+          deviceId != null ? [deviceId] : [] as List<String>;
+      User user = User(uid, deviceIds, firstName, lastName, [], [], 0, 0);
+      DocumentReference result = await CRUD.add<User>(user);
       if (result == null) {
         setState(() {
           loading = false;

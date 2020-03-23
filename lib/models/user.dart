@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:helping_hands/constants/magic_strings.dart';
 import 'package:helping_hands/models/baseModel.dart';
+import 'package:helping_hands/utils/list.dart';
 import 'rating.dart';
 
 class User implements BaseModel {
@@ -18,9 +19,24 @@ class User implements BaseModel {
   int thumbsDownGiven;
   DocumentReference reference;
 
-  User(this.deviceIds, this.firstName, this.lastName, this.ratingsReceived,
-      this.ratingsGiven, this.thumbsUpGiven, this.thumbsDownGiven,
-      [this.address, this.profilePictureLink]);
+  User(
+      this.uid,
+      this.deviceIds,
+      this.firstName,
+      this.lastName,
+      this.ratingsReceived,
+      this.ratingsGiven,
+      this.thumbsUpGiven,
+      this.thumbsDownGiven,
+      [this.address = "",
+      this.profilePictureLink = ""]) {
+    this.requestIds = new List<String>();
+    this.chatIds = new List<String>();
+  }
+
+  bool isComplete() {
+    return firstName != null && lastName != null;
+  }
 
   @override
   String getId() {
@@ -56,15 +72,15 @@ class User implements BaseModel {
         assert(map[thumbsUpGivenStr] != null),
         assert(map[thumbsDownGivenStr] != null),
         uid = map[uidStr],
-        requestIds = map[requestIdsStr],
-        chatIds = map[chatIdsStr],
-        deviceIds = map[deviceIdsStr],
+        requestIds = fromGenericList<String>(map[requestIdsStr]),
+        chatIds = fromGenericList<String>(map[chatIdsStr]),
+        deviceIds = fromGenericList<String>(map[deviceIdsStr]),
         firstName = map[firstNameStr],
         lastName = map[lastNameStr],
         address = map[profilePictureLinkStr],
         profilePictureLink = map[profilePictureLinkStr],
-        ratingsReceived = map[ratingsReceivedStr],
-        ratingsGiven = map[ratingsGivenStr],
+        ratingsReceived = fromGenericList<Rating>(map[ratingsReceivedStr]),
+        ratingsGiven = fromGenericList<Rating>(map[ratingsGivenStr]),
         thumbsUpGiven = map[thumbsUpGivenStr],
         thumbsDownGiven = map[thumbsDownGivenStr];
 

@@ -27,3 +27,9 @@ const requestStatusStr = "requestStatus";
 const weekDaysRepeatingStr = "weekDaysRepeating";
 const dueDateStr = "dueDate";
 const messageStr = "message";
+
+// Channel strings
+const chatChannel = "chats";
+const chatMessageChannel = "chatMessages";
+const requestChannel = "requests";
+const userChannel = "users";

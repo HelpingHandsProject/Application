@@ -42,7 +42,6 @@ class AuthService {
 
       final FirebaseUser user =
           (await _auth.signInWithCredential(credential)).user;
-      print("signed in " + user.displayName);
 
       return user;
     } catch (e) {
@@ -84,11 +83,17 @@ class AuthService {
     }
   }
 
-  static bool isLoggedIn() {
-    if (FirebaseAuth.instance.currentUser() != null)
+  static Future<bool> isLoggedIn() async {
+    if (await FirebaseAuth.instance.currentUser() != null) {
+      print(FirebaseAuth.instance.currentUser());
       return true;
-    else
-      return false;
+    }
+    return false;
+  }
+
+  static Future<String> getUserId() async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    return user.uid;
   }
 
   static Future<String> getDeviceId() async {
