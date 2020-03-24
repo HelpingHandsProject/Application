@@ -22,7 +22,7 @@ class _CreateProfileState extends State<CreateProfile> {
 
   File _image;
   static AssetImage defaultImage =
-      new AssetImage('assets/images/profile-picture.png');
+      AssetImage('assets/images/profile-picture.png');
   ImageProvider imageProvider = defaultImage;
   String error = '';
   String firstName = '';
@@ -48,12 +48,12 @@ class _CreateProfileState extends State<CreateProfile> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      new Container(
+                      Container(
                           width: 190.0,
                           height: 190.0,
-                          decoration: new BoxDecoration(
+                          decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              image: new DecorationImage(
+                              image: DecorationImage(
                                   fit: BoxFit.cover, image: imageProvider))),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -72,7 +72,7 @@ class _CreateProfileState extends State<CreateProfile> {
                         ],
                       ),
                       SizedBox(height: 5.0),
-                      new Text(firstName + " " + lastName, textScaleFactor: 1.5)
+                      Text(firstName + " " + lastName, textScaleFactor: 1.5)
                     ],
                   ),
                   SizedBox(height: 20.0),

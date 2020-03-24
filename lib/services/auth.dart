@@ -85,7 +85,8 @@ class AuthService {
 
   static Future<bool> isLoggedIn() async {
     if (await FirebaseAuth.instance.currentUser() != null) {
-      print(FirebaseAuth.instance.currentUser());
+      print("AuthService/isLoggedIn:" +
+          FirebaseAuth.instance.currentUser().toString());
       return true;
     }
     return false;
@@ -97,7 +98,7 @@ class AuthService {
   }
 
   static Future<String> getDeviceId() async {
-    final DeviceInfoPlugin deviceInfoPlugin = new DeviceInfoPlugin();
+    final DeviceInfoPlugin deviceInfoPlugin = DeviceInfoPlugin();
     if (Platform.isAndroid) {
       var build = await deviceInfoPlugin.androidInfo;
       return build.androidId; //UUID for Android
