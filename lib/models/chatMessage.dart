@@ -13,6 +13,12 @@ class ChatMessage implements BaseModel {
 
   ChatMessage(this.message, [this.requestId]);
 
+  @override
+  String getId() {
+    return messageId;
+  }
+
+  @override
   Map<String, dynamic> toMap() => {
         messageIdStr: messageId,
         uidStr: uid,
@@ -22,7 +28,8 @@ class ChatMessage implements BaseModel {
         messageStr: message
       };
 
-  ChatMessage.fromMap(Map<String, dynamic> map, {this.reference})
+  @override
+  ChatMessage.fromMap(Map<String, dynamic> map, this.reference)
       : assert(map[messageIdStr] != null),
         assert(map[uidStr] != null),
         assert(map[createdStr] != null),
@@ -36,6 +43,8 @@ class ChatMessage implements BaseModel {
         requestId = map[requestIdStr],
         message = map[messageStr];
 
-  ChatMessage.fromSnapshot(DocumentSnapshot snapshot)
-      : this.fromMap(snapshot.data, reference: snapshot.reference);
+  @override
+  BaseModel fromSnapshot(DocumentSnapshot snapshot) {
+    return ChatMessage.fromMap(snapshot.data, snapshot.reference);
+  }
 }
