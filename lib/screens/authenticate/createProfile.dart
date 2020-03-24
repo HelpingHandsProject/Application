@@ -21,7 +21,8 @@ class _CreateProfileState extends State<CreateProfile> {
   bool loading = false;
 
   File _image;
-  static AssetImage defaultImage = new AssetImage('assets/images/profile-picture.png');
+  static AssetImage defaultImage =
+      new AssetImage('assets/images/profile-picture.png');
   ImageProvider imageProvider = defaultImage;
   String error = '';
   String firstName = '';
@@ -29,80 +30,79 @@ class _CreateProfileState extends State<CreateProfile> {
 
   @override
   Widget build(BuildContext context) {
-
-    if(_image != null){
+    if (_image != null) {
       imageProvider = FileImage(_image);
     }
 
     return Scaffold(
-      backgroundColor: backgroundColor,
+        backgroundColor: backgroundColor,
         appBar: LogoutAppBar(titleText: 'Create Profile'),
-    body: SingleChildScrollView(
-      child: Container(
-        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: Form(
-          key: _formKey,
-          child: Column(
-            children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+        body: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
+            child: Form(
+              key: _formKey,
+              child: Column(
                 children: <Widget>[
-                  new Container(
-                      width: 190.0,
-                      height: 190.0,
-                      decoration: new BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: new DecorationImage(
-                              fit: BoxFit.cover,
-                              image: imageProvider
-                          )
-                      )),
-                  Row(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      FloatingActionButton(
-                        onPressed: getImageFromCamera,
-                        tooltip: 'Pick Image',
-                        child: Icon(openCameraIcon),
+                      new Container(
+                          width: 190.0,
+                          height: 190.0,
+                          decoration: new BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: new DecorationImage(
+                                  fit: BoxFit.cover, image: imageProvider))),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          FloatingActionButton(
+                            onPressed: getImageFromCamera,
+                            tooltip: 'Pick Image',
+                            child: Icon(openCameraIcon),
+                          ),
+                          SizedBox(width: 20.0),
+                          FloatingActionButton(
+                            onPressed: getImageFromGallery,
+                            tooltip: 'Pick Image',
+                            child: Icon(openGalleryIcon),
+                          ),
+                        ],
                       ),
-                      SizedBox(width: 20.0),
-                      FloatingActionButton(
-                        onPressed: getImageFromGallery,
-                        tooltip: 'Pick Image',
-                        child: Icon(openGalleryIcon),
-                      ),
+                      SizedBox(height: 5.0),
+                      new Text(firstName + " " + lastName, textScaleFactor: 1.5)
                     ],
                   ),
-                  SizedBox(height: 5.0),
-                  new Text(firstName + " " + lastName,
-                      textScaleFactor: 1.5)
+                  SizedBox(height: 20.0),
+                  NameTextField("Firstname", (val) {
+                    setState(() => firstName = val);
+                  }),
+                  SizedBox(height: 20.0),
+                  NameTextField("Lastname", (val) {
+                    setState(() => lastName = val);
+                  }),
+                  SizedBox(height: 20.0),
+                  RaisedButton(
+                    color: primaryColor,
+                    child: Text(
+                      'Complete Profile',
+                      style: TextStyle(color: lightTextColor),
+                    ),
+                    onPressed: () => completingProfileInformation,
+                  ),
+                  SizedBox(height: 6.0),
+                  SizedBox(height: 12.0),
+                  Text(
+                    error,
+                    style: TextStyle(color: errorColor, fontSize: 14.0),
+                  )
                 ],
               ),
-              SizedBox(height: 20.0),
-              NameTextField("Firstname", (val) {setState(() => firstName = val);}),
-              SizedBox(height: 20.0),
-              NameTextField("Lastname", (val) {setState(() => lastName = val);}),
-              SizedBox(height: 20.0),
-              RaisedButton(
-                  color: primaryColor,
-                  child: Text(
-                    'Complete Profile',
-                    style: TextStyle(color: lightTextColor),
-                  ),
-                  onPressed: () => completingProfileInformation,
-              ),
-              SizedBox(height: 6.0),
-              SizedBox(height: 12.0),
-              Text(
-                error,
-                style: TextStyle(color: errorColor, fontSize: 14.0),
-              )
-            ],
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 
   Future getImageFromGallery() async {
@@ -121,8 +121,8 @@ class _CreateProfileState extends State<CreateProfile> {
     });
   }
 
-  Future completingProfileInformation() async{
-    if(_formKey.currentState.validate()){
+  Future completingProfileInformation() async {
+    if (_formKey.currentState.validate()) {
       setState(() => loading = true);
       String uid = await AuthService.getUserId();
       String deviceId = await AuthService.getDeviceId();
