@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:helping_hands/Constants/colors.dart';
+import 'package:helping_hands/elements/formFields.dart';
 import '../../Elements/logoutAppBar.dart';
-import 'package:helping_hands/Elements/formFields.dart';
 
 class AddRequest extends StatefulWidget {
   @override
@@ -19,7 +19,7 @@ class _AddRequestState extends State<AddRequest> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: LogoutAppBar(titleText: 'Request Help'),
+      appBar: BaseAppBar(titleText: 'Request Help'),
       body: SingleChildScrollView(
         child: Column(children: <Widget>[
           Form(

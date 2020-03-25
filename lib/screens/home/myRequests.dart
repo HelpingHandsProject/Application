@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:helping_hands/Constants/colors.dart';
 import 'package:helping_hands/Constants/icons.dart';
+import 'package:helping_hands/Elements/baseAppBar.dart';
 import 'package:helping_hands/screens/home/addRequest.dart';
 import '../../Elements/logoutAppBar.dart';
 import '../../Elements/myRequestCard.dart';
@@ -15,7 +16,7 @@ class _MyRequestsState extends State<MyRequests> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: LogoutAppBar(titleText: 'My Requests'),
+      appBar: BaseAppBar(titleText: 'My Requests'),
       floatingActionButton: FloatingActionButton(
         backgroundColor: primaryColor,
         child: Icon(addRequestIcon, size: 40),
