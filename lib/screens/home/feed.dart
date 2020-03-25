@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:helping_hands/Elements/baseAppBar.dart';
 import 'package:helping_hands/Elements/feedRequestCard.dart';
 import 'package:helping_hands/Elements/logoutAppBar.dart';
 
@@ -12,7 +13,7 @@ class _FeedState extends State<Feed> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: LogoutAppBar(titleText: 'In your area'),
+      appBar: BaseAppBar(titleText: 'In your area'),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[

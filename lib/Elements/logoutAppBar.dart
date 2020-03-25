@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:helping_hands/Constants/icons.dart';
-import 'package:helping_hands/Elements/baseAppBar.dart';
+import 'package:helping_hands/Elements/clickableIconAppBar.dart';
 import 'package:helping_hands/services/auth.dart';
 
-class LogoutAppBar extends BaseAppBar {
+class LogoutAppBar extends ClickableIconAppBar {
   LogoutAppBar({
     Key key,
     @required titleText,

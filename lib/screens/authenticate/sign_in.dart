@@ -1,6 +1,6 @@
 import 'package:helping_hands/Constants/colors.dart';
 import 'package:helping_hands/Constants/icons.dart';
-import 'package:helping_hands/Elements/baseAppBar.dart';
+import 'package:helping_hands/Elements/clickableIconAppBar.dart';
 import 'package:helping_hands/Elements/formFields.dart';
 import 'package:helping_hands/services/auth.dart';
 import 'package:helping_hands/shared/loading.dart';
@@ -30,7 +30,7 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
       backgroundColor: backgroundColor,
-      appBar: BaseAppBar(titleText: 'Sign in', icon: personIcon,
+      appBar: ClickableIconAppBar(titleText: 'Sign in', icon: personIcon,
         buttonText: "Register", onPressedFunction: widget.toggleView),
       body: SingleChildScrollView(
         child: Container(

@@ -6,13 +6,10 @@ import 'package:helping_hands/Constants/colors.dart';
 class BaseAppBar extends StatelessWidget with PreferredSizeWidget{
   BaseAppBar({
     Key key,
-    @required this.titleText, @required this.icon, @required this.buttonText, @required this.onPressedFunction,
+    @required this.titleText,
   }) : super(key: key);
 
   final String titleText;
-  final IconData icon;
-  final String buttonText;
-  final Function onPressedFunction;
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +18,6 @@ class BaseAppBar extends StatelessWidget with PreferredSizeWidget{
       elevation: 0.0,
       title: Text(titleText),
       centerTitle: true,
-      actions: <Widget>[
-        FlatButton.icon(
-          icon: Icon(icon),
-          label: Text(buttonText),
-          textColor: lightTextColor,
-          onPressed: onPressedFunction,
-        ),
-      ],
     );
   }
 
