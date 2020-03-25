@@ -1,6 +1,5 @@
 import 'package:helping_hands/Constants/colors.dart';
 import 'package:helping_hands/Constants/icons.dart';
-import 'package:helping_hands/Elements/logoutAppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:helping_hands/screens/home/myRequests.dart';
 import 'package:helping_hands/screens/home/profileSettings.dart';

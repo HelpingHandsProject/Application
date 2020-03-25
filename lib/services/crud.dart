@@ -58,7 +58,6 @@ class CRUD {
   void subscribeToDocumentChange<T extends BaseModel>(
       T document, void Function(T updatedDocument) onChange) {
     document.reference.snapshots().listen((snapshot) {
-      document.toMap();
       T updatedDocument = document.fromSnapshot(snapshot);
       onChange(updatedDocument);
     });
