@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:helping_hands/constants/magic_strings.dart';
+import 'package:helping_hands/Constants/magic_strings.dart';
 import 'package:helping_hands/models/baseModel.dart';
 import 'package:helping_hands/models/chat.dart';
 import 'package:helping_hands/models/chatMessage.dart';
