@@ -1,6 +1,6 @@
 import 'package:helping_hands/Constants/colors.dart';
 import 'package:helping_hands/Constants/icons.dart';
-import 'package:helping_hands/Elements/baseAppBar.dart';
+import 'package:helping_hands/Elements/clickableIconAppBar.dart';
 import 'package:helping_hands/Elements/formFields.dart';
 import 'package:helping_hands/services/auth.dart';
 import 'package:helping_hands/shared/loading.dart';
@@ -31,7 +31,7 @@ class _RegisterState extends State<Register> {
         ? Loading()
         : Scaffold(
             backgroundColor: backgroundColor,
-            appBar: BaseAppBar(
+            appBar: ClickableIconAppBar(
                 titleText: 'Sign up',
                 icon: personIcon,
                 buttonText: "Sign In",

@@ -19,7 +19,7 @@ class _AddRequestState extends State<AddRequest> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: LogoutAppBar(titleText: 'Request Help'),
+      appBar: BaseAppBar(titleText: 'Request Help'),
       body: SingleChildScrollView(
         child: Column(children: <Widget>[
           Form(
