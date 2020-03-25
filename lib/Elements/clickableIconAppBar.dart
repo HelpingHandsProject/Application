@@ -1,12 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:helping_hands/Constants/colors.dart';
+import 'package:helping_hands/constants/colors.dart';
 
-
-class ClickableIconAppBar extends StatelessWidget with PreferredSizeWidget{
+class ClickableIconAppBar extends StatelessWidget with PreferredSizeWidget {
   ClickableIconAppBar({
     Key key,
-    @required this.titleText, @required this.icon, @required this.buttonText, @required this.onPressedFunction,
+    @required this.titleText,
+    @required this.icon,
+    @required this.buttonText,
+    @required this.onPressedFunction,
   }) : super(key: key);
 
   final String titleText;

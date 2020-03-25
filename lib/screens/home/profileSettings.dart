@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:helping_hands/Constants/colors.dart';
-import 'package:helping_hands/Constants/icons.dart';
-import 'package:helping_hands/Elements/formFields.dart';
-import 'package:helping_hands/Elements/logoutAppBar.dart';
+import 'package:helping_hands/constants/colors.dart';
+import 'package:helping_hands/constants/icons.dart';
+import 'package:helping_hands/elements/formFields.dart';
+import 'package:helping_hands/elements/logoutAppBar.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ProfileSettings extends StatefulWidget {

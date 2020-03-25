@@ -1,5 +1,5 @@
-import 'package:helping_hands/Constants/colors.dart';
-import 'package:helping_hands/Constants/icons.dart';
+import 'package:helping_hands/constants/colors.dart';
+import 'package:helping_hands/constants/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:helping_hands/screens/home/myRequests.dart';
 import 'package:helping_hands/screens/home/profileSettings.dart';
