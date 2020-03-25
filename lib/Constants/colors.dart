@@ -8,6 +8,7 @@ final Color errorColor = Colors.red;
 
 // Text colors
 final Color darkTextColor = Colors.black54;
+final Color blackTextColor = Colors.black87;
 final Color lightTextColor = Colors.white;
 
 // Symbol Colors

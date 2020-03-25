@@ -18,7 +18,7 @@ class Wrapper extends StatelessWidget {
       return Authenticate();
     } else {
       if(firebaseUser.isEmailVerified){
-        if(false) {
+        if(true) {
           return Home();
         } else{
           return CreateProfile();

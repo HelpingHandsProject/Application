@@ -2,6 +2,10 @@ import 'package:helping_hands/Constants/colors.dart';
 import 'package:helping_hands/Constants/icons.dart';
 import 'package:helping_hands/Elements/logoutAppBar.dart';
 import 'package:flutter/material.dart';
+import 'package:helping_hands/screens/home/myRequests.dart';
+import 'package:helping_hands/screens/home/profileSettings.dart';
+
+import 'feed.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -10,22 +14,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
-
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home - Feed',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: My Requests',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Settings',
-      style: optionStyle,
-    ),
+  List<Widget> _widgetOptions = <Widget>[
+    Feed(),
+    MyRequests(),
+    ProfileSettings()
   ];
 
   void _onItemTapped(int index) {
@@ -39,7 +31,6 @@ class _HomeState extends State<Home> {
     return Container(
       child: Scaffold(
         backgroundColor: backgroundColor,
-        appBar: LogoutAppBar(titleText: 'Helping Hands'),
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),
         ),
