@@ -1,7 +1,7 @@
-import 'package:helping_hands/Constants/colors.dart';
-import 'package:helping_hands/Constants/icons.dart';
-import 'package:helping_hands/Elements/clickableIconAppBar.dart';
-import 'package:helping_hands/Elements/formFields.dart';
+import 'package:helping_hands/constants/colors.dart';
+import 'package:helping_hands/constants/icons.dart';
+import 'package:helping_hands/elements/clickableIconAppBar.dart';
+import 'package:helping_hands/elements/formFields.dart';
 import 'package:helping_hands/services/auth.dart';
 import 'package:helping_hands/shared/loading.dart';
 import 'package:flutter/material.dart';

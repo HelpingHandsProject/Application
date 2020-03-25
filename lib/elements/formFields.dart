@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:helping_hands/Constants/colors.dart';
+import 'package:helping_hands/constants/colors.dart';
 
 class NameTextField extends TextFormField {
   static RegExp notJustWhitespaces = new RegExp('\\s+');

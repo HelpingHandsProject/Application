@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:helping_hands/Constants/colors.dart';
+import 'package:helping_hands/constants/colors.dart';
 
-
-class BaseAppBar extends StatelessWidget with PreferredSizeWidget{
+class BaseAppBar extends StatelessWidget with PreferredSizeWidget {
   BaseAppBar({
     Key key,
     @required this.titleText,

@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:helping_hands/Elements/baseAppBar.dart';
-import 'package:helping_hands/Elements/feedRequestCard.dart';
-import 'package:helping_hands/Elements/logoutAppBar.dart';
+import 'package:helping_hands/elements/baseAppBar.dart';
+import 'package:helping_hands/elements/feedRequestCard.dart';
 
 class Feed extends StatefulWidget {
   @override

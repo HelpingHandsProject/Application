@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:helping_hands/Constants/colors.dart';
-import 'package:helping_hands/Constants/icons.dart';
-import 'package:helping_hands/Elements/baseAppBar.dart';
+import 'package:helping_hands/constants/colors.dart';
+import 'package:helping_hands/constants/icons.dart';
+import 'package:helping_hands/elements/baseAppBar.dart';
 import 'package:helping_hands/screens/home/addRequest.dart';
-import '../../Elements/logoutAppBar.dart';
-import '../../Elements/myRequestCard.dart';
+import '../../elements/myRequestCard.dart';
 
 class MyRequests extends StatefulWidget {
   @override
