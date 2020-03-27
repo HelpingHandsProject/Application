@@ -22,7 +22,7 @@ Check the [LICENSE](LICENSE) file for further information
 
 ## Some tasks people could need help with:
 
-### During the corona crisis - contactless help:
+### During the coronavirus crisis - contactless help:
 
 - Go shopping
 - Pickup medicine
