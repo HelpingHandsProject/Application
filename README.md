@@ -22,17 +22,16 @@ Check the [LICENSE](LICENSE) file for further information
 
 ## Some tasks people could need help with:
 
-### During the coronavirus crisis - contactless help:
+### During the Coronavirus crisis - contactless help:
 
 - Go shopping
 - Pickup medicine
 - Walk the dog
 - Someone to talk with
 
-### After the corona crisis - general help:
+### After the Coronavirus crisis - general help:
 
 - Drive to the doctor
-- Feed pets during absence
 - Change a broken lightbulb
 - Mow the lawn
 - Baybysit
