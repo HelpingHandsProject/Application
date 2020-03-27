@@ -62,7 +62,7 @@ Check the [LICENSE](LICENSE) file for further information
 - Test the app once released and report bugs or suggest how it could be improved
 - Translate the app into another language
 
-## Individual Screens:
+## App functionality:
 
 # FEED IMAGE PLACEHOLDER
 
