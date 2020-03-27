@@ -8,7 +8,7 @@ Check the [LICENSE](LICENSE) file for further information
 - Because of the current corona crisis we strive to develop the app as quickly as possible!
 - Even tough we want to develop the app quickly, safe authentication & server communication as well as the privacy of users are very important for us.
 
-## PLACEHOLDER FOR SCREENSHOT
+![APP SCREENSHOT](screenshots/overview.jpg)
 
 ### Features of the app:
 
@@ -64,37 +64,46 @@ Check the [LICENSE](LICENSE) file for further information
 
 ## App functionality:
 
-# FEED IMAGE PLACEHOLDER
+![APP SCREENSHOT](screenshots/duapp_01.jpg)
 
 - Users can see people that need help with some task
 - Users can see an approximate distance to the person
 - Users can see a short description what the person needs help with
 - Users can offer their help
 - If the person requesting help is not anonymus, users see their name and profile image
-- Users can search for requests or volunteers with specific skills
+- Users can search for requests requiring specific skills
 
-# REQUEST DETAILS PLACEHOLDER
+![APP SCREENSHOT](screenshots/duapp_02.jpg)
 
 - Users can see more details regarding the request
 - Users can offer their help and write a small introduction to start the conversation
 
-# OFFER DETAILS PLACEHOLDER
+![APP SCREENSHOT](screenshots/duapp_03.jpg)
+
+- Users can see people that offer particular skills
+- Users can see an approximate distance to the person
+- Users can see a short description about the person
+- Users can request their help
+- Users see their name and profile image
+- Users can search for volunteers with specific skills
+
+![APP SCREENSHOT](screenshots/duapp_04.jpg)
 
 - Users can see a description of the person along with a number of skills they have to offer
 - Users can request the help from that person and give a short description of what they need help with
 
-# CHAT LIST PLACEHOLDER
+![APP SCREENSHOT](screenshots/duapp_05.jpg)
 
 - Users can reconnect with people who helped them before
 
-# CHAT PLACEHOLDER
+![APP SCREENSHOT](screenshots/duapp_06.jpg)
 
 - Users can communicate to come to agreement on how and when the help should happen
 
-# NEW REQUEST PLACEHOLDER
+![APP SCREENSHOT](screenshots/duapp_09.jpg)
 
 - Users can create new requests for help
 
-# PROFILE PLACEHOLDER
+![APP SCREENSHOT](screenshots/duapp_11.jpg)
 
 - Users can give others a quick introduction to themselves through their profile
