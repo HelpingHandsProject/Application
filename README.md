@@ -1,4 +1,4 @@
-# Helping Hands
+# Duapp
 
 Is an application that is aimed to enable people to get help from people and to help people in their neighborhood.
 
@@ -9,16 +9,17 @@ Check the [LICENSE](LICENSE) file for further information
 - Because of the current corona crisis we strive to develop the app as quickly as possible!
 - Even tough we want to develop the app quickly, safe authentication & server communication as well as the privacy of users are very important for us.
 
+## PLACEHOLDER FOR SCREENSHOT
+
 ### Features of the app:
 
-- A Feed where users can see nearby requests
-- A map where people can see how many requests are around them
-- A screen where users can post new requests
-- A messenger where users can chat with other users
-- A profile page where people can edit their data
-
-![Early Design](app_design_v0.1.jpg)
-
+- Users can see nearby requests for help
+- Users can see nearby volunteers that offer help
+- Users can post requests for help
+- Users can post what they can help others with
+- Chat interface
+- User profiles
+- Search for requests/offers
 
 #### What can people do with the app? - Request any kind of help!
 
@@ -26,12 +27,21 @@ Check the [LICENSE](LICENSE) file for further information
 
 Some use cases people could need help with:
 
+### During the corona crisis - contactless help:
+
 - Go shopping to buy groceries
-- Drive to the doctor
+- Pickup medicine
 - Walk the dog
+- Someone to talk with
+
+### After the corona crisis - general help:
+
+- Drive to the doctor
 - Feed pets during absence
 - Change a broken lightbulb
 - Mow the lawn
+- Baybysit
+- Teach someone to play the piano
 
 ### Technologies used:
 
@@ -57,3 +67,14 @@ Some use cases people could need help with:
 - Support us financially, so that we can pay server costs and improve the app
 - Test the app once released & report bugs and things that need to be enhanced
 - Translate the app into another language that the app doesn't support yet
+
+## Individual Screens:
+
+# FEED IMAGE PLACEHOLDER
+
+- Users can see people that need help with some task
+- Users can see an approximate distance to the person
+- Users can see a short description what the person needs help with
+- Users can offer their help
+- If the person requesting help is not anonymus, users see their name and profile image
+- Users can search
