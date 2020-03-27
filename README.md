@@ -72,4 +72,30 @@ Check the [LICENSE](LICENSE) file for further information
 - Users can see a short description what the person needs help with
 - Users can offer their help
 - If the person requesting help is not anonymus, users see their name and profile image
-- Users can search
+- Users can search for requests or volunteers with specific skills
+
+# REQUEST DETAILS PLACEHOLDER
+
+- Users can see more details regarding the request
+- Users can offer their help and write a small introduction to start the conversation
+
+# OFFER DETAILS PLACEHOLDER
+
+- Users can see a description of the person along with a number of skills they have to offer
+- Users can request the help from that person and give a short description of what they need help with
+
+# CHAT LIST PLACEHOLDER
+
+- Users can reconnect with people who helped them before
+
+# CHAT PLACEHOLDER
+
+- Users can communicate to come to agreement on how and when the help should happen
+
+# NEW REQUEST PLACEHOLDER
+
+- Users can create new requests for help
+
+# PROFILE PLACEHOLDER
+
+- Users can give others a quick introduction to themselves through their profile
