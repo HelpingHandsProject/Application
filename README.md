@@ -5,7 +5,7 @@ Duapp is an app enabling people to request help from volunteers, and enabling vo
 The project is open source and licensed under the MIT License:
 Check the [LICENSE](LICENSE) file for further information
 
-- Because of the current corona crisis we strive to develop the app as quickly as possible!
+- Because of the current Coronavirus crisis we strive to develop the app as quickly as possible!
 - Even tough we want to develop the app quickly, safe authentication & server communication as well as the privacy of users are very important for us.
 
 ![APP SCREENSHOT](screenshots/overview.jpg)
@@ -70,7 +70,7 @@ Check the [LICENSE](LICENSE) file for further information
 - Users can see an approximate distance to the person
 - Users can see a short description what the person needs help with
 - Users can offer their help
-- If the person requesting help is not anonymus, users see their name and profile image
+- If the person requesting help is not anonymous, users see their name and profile image
 - Users can search for requests requiring specific skills
 
 ![APP SCREENSHOT](screenshots/duapp_02.jpg)
