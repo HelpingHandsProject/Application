@@ -1,11 +1,10 @@
 # Duapp
 
-Is an application that is aimed to enable people to get help from people and to help people in their neighborhood.
+Duapp is an app enabling people to request help from volunteers, and enabling volunteers to offer help to those who need it.
 
 The project is open source and licensed under the MIT License:
 Check the [LICENSE](LICENSE) file for further information
 
-- The app is soly aimed towards helping people
 - Because of the current corona crisis we strive to develop the app as quickly as possible!
 - Even tough we want to develop the app quickly, safe authentication & server communication as well as the privacy of users are very important for us.
 
@@ -17,19 +16,15 @@ Check the [LICENSE](LICENSE) file for further information
 - Users can see nearby volunteers that offer help
 - Users can post requests for help
 - Users can post what they can help others with
-- Chat interface
-- User profiles
-- Search for requests/offers
+- Chat to coordinate how and when help should be given
+- User profiles to give a quick introduction between users
+- Search for requests/offers to quickly find things you can do or volunteers that can help you
 
-#### What can people do with the app? - Request any kind of help!
-
-#### Who could use the app? - Anyone that needs help!
-
-Some use cases people could need help with:
+## Some tasks people could need help with:
 
 ### During the corona crisis - contactless help:
 
-- Go shopping to buy groceries
+- Go shopping
 - Pickup medicine
 - Walk the dog
 - Someone to talk with
@@ -58,15 +53,15 @@ Some use cases people could need help with:
 ### How you can help now
 
 - Develop the app with us!
-- Suggest features and enhancements over the Issues tab
+- Suggest features and enhancements in the Issues tab
 - Spread the word to other developers that can help
 
 ### How you can help once the app is released
 
 - Spread the word to other people that the app is there
 - Support us financially, so that we can pay server costs and improve the app
-- Test the app once released & report bugs and things that need to be enhanced
-- Translate the app into another language that the app doesn't support yet
+- Test the app once released and report bugs or suggest how it could be improved
+- Translate the app into another language
 
 ## Individual Screens:
 
