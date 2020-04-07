@@ -57,21 +57,6 @@ class CRUD {
     return user;
   }
 
-  static void subscribeToDocumentChange<T extends BaseModel>(
-      T document, void Function(T updatedDocument) onChange) {
-    document.reference.snapshots().listen((snapshot) {
-      T updatedDocument = BaseModel.fromSnapshot(snapshot);
-      onChange(updatedDocument);
-    });
-  }
-
-  static void subscriveToQueryChange(
-      Query query, void Function(List<DocumentSnapshot> documents) onChange) {
-    query.reference().snapshots().listen((QuerySnapshot snapshot) {
-      onChange(snapshot.documents);
-    });
-  }
-
   static String getCollectionName<T>() {
     Type callType = typeof<T>();
     switch (callType) {

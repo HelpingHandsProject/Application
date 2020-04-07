@@ -46,6 +46,6 @@ class UserStream {
   }
 
   void cancel() {
-    controller?.close();
+    controller.close();
   }
 }
