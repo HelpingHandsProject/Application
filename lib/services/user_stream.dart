@@ -22,6 +22,8 @@ class UserStream {
               .where("uid", isEqualTo: uid);
           DocumentSnapshot snapshot = await queryToSingle(query);
 
+          // Ensure we are not leaking memory
+          userSubscription?.cancel();
           userSubscription = snapshot.reference.snapshots().listen((userData) {
             User user = User.fromSnapshot(userData);
             if (user != null) {
