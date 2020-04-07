@@ -34,6 +34,8 @@ class User implements BaseModel {
     this.chatIds = new List<String>();
   }
 
+  User.undefined();
+
   bool isComplete() {
     return firstName != null && lastName != null;
   }
@@ -84,8 +86,7 @@ class User implements BaseModel {
         thumbsUpGiven = map[thumbsUpGivenStr],
         thumbsDownGiven = map[thumbsDownGivenStr];
 
-  @override
-  BaseModel fromSnapshot(DocumentSnapshot snapshot) {
+  static BaseModel fromSnapshot(DocumentSnapshot snapshot) {
     return User.fromMap(snapshot.data, snapshot.reference);
   }
 

@@ -43,8 +43,7 @@ class ChatMessage implements BaseModel {
         requestId = map[requestIdStr],
         message = map[messageStr];
 
-  @override
-  BaseModel fromSnapshot(DocumentSnapshot snapshot) {
+  static BaseModel fromSnapshot(DocumentSnapshot snapshot) {
     return ChatMessage.fromMap(snapshot.data, snapshot.reference);
   }
 }

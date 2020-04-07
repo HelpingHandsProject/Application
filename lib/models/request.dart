@@ -67,8 +67,7 @@ class Request implements BaseModel {
         weekDaysRepeating = map[weekDaysRepeatingStr],
         dueDate = map[dueDateStr];
 
-  @override
-  BaseModel fromSnapshot(DocumentSnapshot snapshot) {
+  static BaseModel fromSnapshot(DocumentSnapshot snapshot) {
     return Request.fromMap(snapshot.data, snapshot.reference);
   }
 }
