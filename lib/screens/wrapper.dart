@@ -28,7 +28,7 @@ class Wrapper extends StatelessWidget {
             return CreateProfile();
           }
         } else {
-          // Show loading screen until Firebase sends a result
+          // Show loading screen until Firebase sends a User result
           return Loading();
         }
       } else
