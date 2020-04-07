@@ -63,16 +63,7 @@ class User implements BaseModel {
 
   @override
   User.fromMap(Map<String, dynamic> map, this.reference)
-      : assert(map[uidStr] != null),
-        assert(map[requestIdsStr] != null),
-        assert(map[chatIdsStr] != null),
-        assert(map[deviceIdsStr] != null),
-        assert(map[firstNameStr] != null),
-        assert(map[lastNameStr] != null),
-        assert(map[ratingsReceivedStr] != null),
-        assert(map[ratingsGivenStr] != null),
-        assert(map[thumbsUpGivenStr] != null),
-        assert(map[thumbsDownGivenStr] != null),
+      : assert(mapIsValid(map)),
         uid = map[uidStr],
         requestIds = fromGenericList<String>(map[requestIdsStr]),
         chatIds = fromGenericList<String>(map[chatIdsStr]),
@@ -87,7 +78,24 @@ class User implements BaseModel {
         thumbsDownGiven = map[thumbsDownGivenStr];
 
   static BaseModel fromSnapshot(DocumentSnapshot snapshot) {
-    return User.fromMap(snapshot.data, snapshot.reference);
+    if (snapshot != null && mapIsValid(snapshot.data)) {
+      return User.fromMap(snapshot.data, snapshot.reference);
+    } else {
+      return null;
+    }
+  }
+
+  static bool mapIsValid(Map<String, dynamic> map) {
+    return map[uidStr] != null &&
+        map[requestIdsStr] != null &&
+        map[chatIdsStr] != null &&
+        map[deviceIdsStr] != null &&
+        map[firstNameStr] != null &&
+        map[lastNameStr] != null &&
+        map[ratingsReceivedStr] != null &&
+        map[ratingsGivenStr] != null &&
+        map[thumbsUpGivenStr] != null &&
+        map[thumbsDownGivenStr] != null;
   }
 
   @override
