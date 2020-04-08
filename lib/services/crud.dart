@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:helping_hands/Constants/magic_strings.dart';
 import 'package:helping_hands/models/baseModel.dart';
@@ -40,11 +42,11 @@ class CRUD {
 
   static Future<User> getUserProfile() async {
     if (!await AuthService.isLoggedIn()) {
-      print("CRUD/delete: User is not logged in!");
-      return User(null, null, null, null, null, null, null, null);
+      print("CRUD/getUserProfile: User is not logged in!");
+      return User.undefined();
     }
 
-    User user = User(null, null, null, null, null, null, null, null);
+    User user = User.undefined();
     String uid = await AuthService.getUserId();
     Query query =
         Firestore.instance.collection(userChannel).where("uid", isEqualTo: uid);
@@ -53,14 +55,6 @@ class CRUD {
       user = User.fromMap(snapshot.data, snapshot.reference);
     }
     return user;
-  }
-
-  void subscribeToDocumentChange<T extends BaseModel>(
-      T document, void Function(T updatedDocument) onChange) {
-    document.reference.snapshots().listen((snapshot) {
-      T updatedDocument = document.fromSnapshot(snapshot);
-      onChange(updatedDocument);
-    });
   }
 
   static String getCollectionName<T>() {

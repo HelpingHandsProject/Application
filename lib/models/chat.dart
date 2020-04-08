@@ -31,8 +31,7 @@ class Chat implements BaseModel {
         participantIds = map[participantIdsStr],
         openRequestIds = map[openRequestIdsStr];
 
-  @override
-  BaseModel fromSnapshot(DocumentSnapshot snapshot) {
+  static BaseModel fromSnapshot(DocumentSnapshot snapshot) {
     return Chat.fromMap(snapshot.data, snapshot.reference);
   }
 }

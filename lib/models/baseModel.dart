@@ -13,7 +13,7 @@ abstract class BaseModel {
 
   Map<String, dynamic> toMap();
 
-  BaseModel fromSnapshot(DocumentSnapshot snapshot) {
+  static BaseModel fromSnapshot(DocumentSnapshot snapshot) {
     Type initialiserType = typeof<BaseModel>();
     switch (initialiserType) {
       case Chat:
