@@ -48,6 +48,8 @@ class UserStream {
   }
 
   void cancel() {
+    fbSubscription?.cancel();
+    userSubscription?.cancel();
     controller.close();
   }
 }
